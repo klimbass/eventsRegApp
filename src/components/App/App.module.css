@@ -1,0 +1,7 @@
+.wrap {
+  display: block;
+  height: calc(100vh - 150px);
+  padding: 30px 40px;
+  margin: 40px;
+  border: 1px solid #94939376;
+}

@@ -1,0 +1,58 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* gap: 8px; */
+  width: 160px;
+  height: 150px;
+  border: 1px solid #94939376;
+  padding: 20px;
+  box-shadow: 4px 2px #94939376;
+}
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.card h3 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card p {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.desc {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.org {
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #94939323;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 160px;
+}
+.org span {
+  font-size: 12px;
+}
+.buttonBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-decoration: none;
+  color: #2a82a5;
+}

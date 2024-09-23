@@ -1,0 +1,38 @@
+.formWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.formWrap h3 {
+  font-size: 24px;
+  font-weight: 400;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.field input {
+  border: 1px solid rgba(148, 147, 147, 0.463);
+  padding: 8px;
+  outline: none;
+  width: 30%;
+  min-width: 220px;
+  color: #4a4a4a;
+}
+.radio {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+.button {
+  /* display: flex; */
+  padding: 4px 16px;
+  max-width: 100px;
+  margin-left: 10%;
+}
