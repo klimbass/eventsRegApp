@@ -2,9 +2,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import EventCard from "../../components/EventCard/EventCard.jsx";
 import css from "./HomePage.module.css";
-import { FaCircleChevronLeft, FaCircleChevronRight } from "react-icons/fa6";
-import clsx from "clsx";
 import { useLocation, useNavigate } from "react-router-dom";
+import Pagination from "../../components/Pagination/Pagination.jsx";
+import SortEventsBy from "../../components/SortEventsBy/SortEventsBy.jsx";
 axios.defaults.baseURL = "https://back-eventsregapp.onrender.com";
 // axios.defaults.baseURL = "http://localhost:3000";
 
@@ -17,7 +17,8 @@ export default function HomePage() {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const [page, setPage] = useState(Number(queryParams.get("page")) || 1);
-
+  const [sortBy, setSortBy] = useState(queryParams.get("sortBy") || "date");
+  const [sortOrder] = useState("asc");
   useEffect(() => {
     const getEventsList = async () => {
       try {
@@ -26,49 +27,45 @@ export default function HomePage() {
           params: {
             page: page,
             perPage: 8,
+            sortBy,
+            sortOrder,
           },
         });
         setEventList(events.data.data.data);
         setResponse(events.data.data);
-        // console.log(events.data.data);
         setLoading(false);
       } catch (error) {
         console.log(error);
       }
     };
     getEventsList();
-  }, [page]);
+  }, [page, sortBy]);
   const handleBack = () => {
     if (page > 1) {
       const newPage = page - 1;
       setPage(newPage);
-      navigate(`?page=${newPage}`);
+      navigate(`?page=${newPage}&sortBy=${sortBy}`);
     }
   };
+
   const handleFront = () => {
     const newPage = page + 1;
     setPage(newPage);
-    navigate(`?page=${newPage}`);
+    navigate(`?page=${newPage}&sortBy=${sortBy}`);
   };
+
   const handleGoPage = (i) => {
-    navigate(`?page=${i}`);
+    navigate(`?page=${i}&sortBy=${sortBy}`);
 
     setPage(i);
   };
+
+  const handleSortBy = (e) => {
+    navigate(`?page=${page}&sortBy=${e.target.value}`);
+    setSortBy(e.target.value);
+  };
+
   const { totalPages } = response;
-  const pages = [];
-  for (let i = 1; i <= totalPages; i++) {
-    pages.push(
-      <button
-        type="button"
-        onClick={() => handleGoPage(i)}
-        key={i}
-        className={clsx(css.page, { [css.currentPage]: i == page })}
-      >
-        {i}
-      </button>
-    );
-  }
 
   return (
     <div className={css.homePage}>
@@ -76,6 +73,7 @@ export default function HomePage() {
       {loading ? <p className={css.loading}>...loading </p> : null}
       {eventsList.length > 0 && (
         <>
+          <SortEventsBy handleSortBy={handleSortBy} />
           <ul className={css.list}>
             {eventsList.map((event) => (
               <li key={event._id}>
@@ -83,19 +81,13 @@ export default function HomePage() {
               </li>
             ))}
           </ul>
-          <div className={css.buttonWrap}>
-            <button type="button" onClick={handleBack} disabled={page <= 1}>
-              <FaCircleChevronLeft size={20} />
-            </button>
-            {pages}
-            <button
-              type="button"
-              onClick={handleFront}
-              disabled={page >= totalPages}
-            >
-              <FaCircleChevronRight size={20} />
-            </button>
-          </div>
+          <Pagination
+            totalPages={totalPages}
+            page={page}
+            handleGoPage={handleGoPage}
+            handleBack={handleBack}
+            handleFront={handleFront}
+          />
         </>
       )}
     </div>

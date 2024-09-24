@@ -1,0 +1,14 @@
+.sortBy {
+  position: absolute;
+  top: 54px;
+  right: 150px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+.radio {
+  display: flex;
+  flex-direction: column;
+  width: 80px;
+  text-align: center;
+}

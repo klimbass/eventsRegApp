@@ -20,26 +20,3 @@
   column-gap: calc((100% - 808px) / 3);
   padding: 0 40px;
 }
-.buttonWrap {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  /* gap: 2px; */
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translate(-50%);
-}
-.buttonWrap button {
-  border: none;
-  background-color: transparent;
-}
-.page {
-  font-size: 12px;
-  color: #94939376;
-}
-.currentPage {
-  color: #2a82a5;
-  font-size: 14px;
-}

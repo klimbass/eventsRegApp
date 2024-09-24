@@ -7,13 +7,13 @@ export default function ParticipantsPage() {
   const { cardId } = useParams();
   const [card, setCard] = useState({});
   const [loading, setLoading] = useState(false);
+  const [searchParams, setSearchParams] = useState("");
 
   useEffect(() => {
     const getCardInfo = async () => {
       try {
         setLoading(true);
         const response = await axios.get(`/events/${cardId}`);
-        // console.log(response.data.data);
         setCard(response.data.data);
         setLoading(false);
 
@@ -27,18 +27,29 @@ export default function ParticipantsPage() {
   }, [cardId]);
 
   const { title, participantsList = [] } = card;
-  // console.dir(card);
+  const currentParticipantsList = participantsList.filter(
+    (item) =>
+      item.userName.toLowerCase().includes(searchParams.toLowerCase()) ||
+      item.userEmail.toLowerCase().includes(searchParams.toLowerCase())
+  );
 
   return (
-    <div>
+    <div className={css.wrap}>
       {loading ? (
         "...loading"
       ) : (
         <>
           <h3>"{title}" participants</h3>
-          {participantsList.length > 0 ? (
+          <input
+            type="text"
+            placeholder="seach"
+            value={searchParams}
+            onChange={(e) => setSearchParams(e.target.value)}
+            className={css.searchField}
+          />
+          {currentParticipantsList.length > 0 ? (
             <ul className={css.partsList}>
-              {participantsList.map((user) => {
+              {currentParticipantsList.map((user) => {
                 return (
                   <li key={user.userId}>
                     <h4>{user.userName}</h4>
