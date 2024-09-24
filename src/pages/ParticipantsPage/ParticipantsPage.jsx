@@ -19,7 +19,6 @@ export default function ParticipantsPage() {
 
         return card;
       } catch (error) {
-        console.log(error);
         setLoading(false);
       }
     };

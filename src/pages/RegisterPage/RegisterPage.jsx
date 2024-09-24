@@ -62,16 +62,13 @@ export default function RegisterPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
     try {
       await validationSchema.validate(formData, { abortEarly: false });
       await axios.patch(`/events/${cardId}`, formData);
-      console.log("Registration successful");
       setErrors({});
       toast.success("Registration successful!");
       navigate("/");
     } catch (err) {
-      console.log("Error submitting form:", err);
       const validationErrors = {};
       if (err.inner) {
         err.inner.forEach((error) => {

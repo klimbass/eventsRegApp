@@ -5,6 +5,7 @@ import css from "./HomePage.module.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import Pagination from "../../components/Pagination/Pagination.jsx";
 import SortEventsBy from "../../components/SortEventsBy/SortEventsBy.jsx";
+import { toast } from "react-toastify";
 axios.defaults.baseURL = "https://back-eventsregapp.onrender.com";
 // axios.defaults.baseURL = "http://localhost:3000";
 
@@ -36,6 +37,8 @@ export default function HomePage() {
         setLoading(false);
       } catch (error) {
         console.log(error);
+
+        toast.error("Something went wrong");
       }
     };
     getEventsList();
