@@ -3,6 +3,11 @@
   height: 100vh;
   color: #4a4a4a;
   box-sizing: border-box;
+
+  --main-text-color: #4a4a4a;
+  --second-text-color: #2a82a5;
+  --light-border-color: #94939376;
+  --border-style: 1px solid #94939376;
 }
 
 a {
@@ -15,7 +20,7 @@ a:hover {
 body {
 }
 input[type="radio"] {
-  accent-color: #2a82a5;
+  accent-color: var(--second-text-color);
 }
 
 h1,

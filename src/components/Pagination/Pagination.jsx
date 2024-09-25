@@ -63,6 +63,7 @@ export default function Pagination({
         </button>
       );
     }
+    console.log(pages);
 
     return pages;
   };

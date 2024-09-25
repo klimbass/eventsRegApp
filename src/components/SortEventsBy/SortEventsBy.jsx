@@ -1,6 +1,6 @@
 import css from "./SortEventsBy.module.css";
 
-export default function SortEventsBy({ handleSortBy }) {
+export default function SortEventsBy({ handleSortBy, sortBy }) {
   return (
     <div className={css.sortBy}>
       <p>Sort by:</p>
@@ -11,6 +11,7 @@ export default function SortEventsBy({ handleSortBy }) {
           name="sortBy"
           id="title"
           value="title"
+          checked={sortBy === "title"}
           onChange={handleSortBy}
         />
       </div>
@@ -21,6 +22,7 @@ export default function SortEventsBy({ handleSortBy }) {
           name="sortBy"
           id="date"
           value="date"
+          checked={sortBy === "date"}
           onChange={handleSortBy}
         />
       </div>
@@ -31,6 +33,7 @@ export default function SortEventsBy({ handleSortBy }) {
           name="sortBy"
           id="organizer"
           value="organizer"
+          checked={sortBy === "organizer"}
           onChange={handleSortBy}
         />
       </div>

@@ -68,15 +68,23 @@ export default function HomePage() {
     setSortBy(e.target.value);
   };
 
+  const handleClickToHome = () => {
+    navigate(`?page=1&sortBy=date`);
+    setPage(1);
+    setSortBy("date");
+  };
   const { totalPages } = response;
 
   return (
     <div className={css.homePage}>
-      <h1 className={css.title}>Events</h1>
+      <h1 className={css.title} onClick={handleClickToHome}>
+        Events
+      </h1>
+
       {loading ? <p className={css.loading}>...loading </p> : null}
       {eventsList.length > 0 && (
         <>
-          <SortEventsBy handleSortBy={handleSortBy} />
+          <SortEventsBy handleSortBy={handleSortBy} sortBy={sortBy} />
           <ul className={css.list}>
             {eventsList.map((event) => (
               <li key={event._id}>

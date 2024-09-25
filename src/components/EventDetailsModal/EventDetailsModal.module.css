@@ -1,0 +1,31 @@
+.wrap {
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  padding: 24px;
+}
+.wrap > h2 {
+  text-align: center;
+}
+.textTitle {
+  font-weight: 600;
+}
+.partWrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 12px;
+}
+.partWrap a {
+  border: var(--border-style);
+  padding: 4px 8px;
+  font-size: 12px;
+}
+.organizer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16%;
+}
