@@ -6,8 +6,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Pagination from "../../components/Pagination/Pagination.jsx";
 import SortEventsBy from "../../components/SortEventsBy/SortEventsBy.jsx";
 import { toast } from "react-toastify";
-// const serverURL = 'https://back-eventsregapp.onrender.com'
-const serverURL = "http://localhost:3000";
+const serverURL = "https://back-eventsregapp.onrender.com";
+// const serverURL = "http://localhost:3000";
 
 axios.defaults.baseURL = serverURL;
 
