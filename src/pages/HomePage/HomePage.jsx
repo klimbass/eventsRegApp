@@ -6,8 +6,10 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Pagination from "../../components/Pagination/Pagination.jsx";
 import SortEventsBy from "../../components/SortEventsBy/SortEventsBy.jsx";
 import { toast } from "react-toastify";
-axios.defaults.baseURL = "https://back-eventsregapp.onrender.com";
-// axios.defaults.baseURL = "http://localhost:3000";
+// const serverURL = 'https://back-eventsregapp.onrender.com'
+const serverURL = "http://localhost:3000";
+
+axios.defaults.baseURL = serverURL;
 
 export default function HomePage() {
   const [eventsList, setEventList] = useState([]);
@@ -43,6 +45,7 @@ export default function HomePage() {
     };
     getEventsList();
   }, [page, sortBy]);
+
   const handleBack = () => {
     if (page > 1) {
       const newPage = page - 1;

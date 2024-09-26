@@ -46,20 +46,22 @@ export default function ParticipantsPage() {
             onChange={(e) => setSearchParams(e.target.value)}
             className={css.searchField}
           />
-          {currentParticipantsList.length > 0 ? (
-            <ul className={css.partsList}>
-              {currentParticipantsList.map((user) => {
-                return (
-                  <li key={user.userId}>
-                    <h4>{user.userName}</h4>
-                    <p>{user.userEmail}</p>
-                  </li>
-                );
-              })}
-            </ul>
-          ) : (
-            <p>No participants</p>
-          )}
+          <div className={css.listWrap}>
+            {currentParticipantsList.length > 0 ? (
+              <ul className={css.partsList}>
+                {currentParticipantsList.map((user) => {
+                  return (
+                    <li key={user.userId}>
+                      <h4>{user.userName}</h4>
+                      <p>{user.userEmail}</p>
+                    </li>
+                  );
+                })}
+              </ul>
+            ) : (
+              <p>No participants</p>
+            )}
+          </div>
         </>
       )}
     </div>
