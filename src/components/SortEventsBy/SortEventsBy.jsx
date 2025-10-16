@@ -27,7 +27,7 @@ export default function SortEventsBy({ handleSortBy, sortBy }) {
         />
       </div>
       <div className={css.radio}>
-        <label htmlFor="organizer">Organizer</label>
+        <label htmlFor="organizer">Sponsor</label>
         <input
           type="radio"
           name="sortBy"

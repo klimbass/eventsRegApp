@@ -4,11 +4,32 @@
   right: 150px;
   display: flex;
   flex-direction: row;
-  gap: 8px;
+  gap: 30px;
+  white-space: nowrap;
 }
 .radio {
   display: flex;
   flex-direction: column;
-  width: 80px;
+  flex: 1 2 0;
+  min-width: 65px;
   text-align: center;
+}
+@media (max-width: 768px) {
+  .sortBy {
+    right: 10%;
+    gap: 2%;
+  }
+}
+@media (max-width: 646px) {
+  .sortBy {
+    position: relative;
+    top: 0;
+    right: 0;
+    padding: 8px 10%;
+    font-size: 11px;
+  }
+  .radio {
+    min-width: 35px;
+    font-size: 11px;
+  }
 }

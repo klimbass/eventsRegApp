@@ -7,6 +7,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 import * as Yup from "yup";
+import { useNavigate } from "react-router-dom";
 
 const MIN_AGE = 18;
 
@@ -30,6 +31,7 @@ const validationSchema = Yup.object().shape({
 });
 
 export default function RegistrationForm({ cardId, setChanger }) {
+  const navigate = useNavigate();
   const today = new Date();
   const eighteenYearsAgo = new Date(
     today.setFullYear(today.getFullYear() - MIN_AGE)
@@ -65,6 +67,7 @@ export default function RegistrationForm({ cardId, setChanger }) {
       setErrors({});
       setChanger((changer) => !changer);
       toast.success("Registration successful!");
+      navigate("/");
     } catch (err) {
       const validationErrors = {};
       if (err.inner) {

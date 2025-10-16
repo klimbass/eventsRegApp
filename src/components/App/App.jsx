@@ -6,12 +6,22 @@ import css from "./App.module.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage.jsx";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function App() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleClickToHome = () => {
+    navigate("/?page=1&sortBy=date");
+  };
   return (
     <div className={css.wrap}>
+      <h1 className={css.title} onClick={handleClickToHome}>
+        Events Registration
+      </h1>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage key={location.search} />} />
         <Route path="/register/:cardId" element={<RegisterPage />} />
         <Route path="/participants/:cardId" element={<ParticipantsPage />} />
         <Route path="*" element={<NotFoundPage />} />

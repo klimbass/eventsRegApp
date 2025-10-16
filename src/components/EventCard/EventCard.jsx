@@ -6,6 +6,7 @@ import EventDetailsModal from "../EventDetailsModal/EventDetailsModal.jsx";
 
 export default function EventCard({ event }) {
   const [showModal, setShowModal] = useState(false);
+
   const handleClick = () => {
     setShowModal(!showModal);
   };
@@ -26,7 +27,7 @@ export default function EventCard({ event }) {
         <Link to={`/participants/${cardId}`}>View</Link>
       </div>
       {showModal && (
-        <Modal onClose={handleClick}>
+        <Modal onClose={handleClick} isOpen={showModal}>
           <EventDetailsModal event={event} />
         </Modal>
       )}

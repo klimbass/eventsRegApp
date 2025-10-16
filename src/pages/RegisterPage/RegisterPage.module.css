@@ -1,4 +1,11 @@
 .registerPage {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
+}
+@media (max-width: 767px) {
+  .registerPage {
+    flex-direction: column;
+    align-items: center;
+  }
 }

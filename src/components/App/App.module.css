@@ -1,7 +1,24 @@
 .wrap {
   display: block;
-  height: calc(100vh - 150px);
+  height: calc(100% - 150px);
   padding: 30px 40px;
-  margin: 40px;
-  border: 1px solid #94939376;
+  margin: 20px;
+  border: var(--border-style);
+}
+
+.title {
+  position: absolute;
+  top: 10px;
+  left: 60px;
+  color: var(--light-border-color);
+  font-weight: 800;
+  background-color: #fff;
+  padding: 2px 16px;
+  cursor: pointer;
+}
+@media (max-width: 648px) {
+  .title {
+    font-size: 25px;
+    top: 18px;
+  }
 }

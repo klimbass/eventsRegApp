@@ -6,8 +6,9 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Pagination from "../../components/Pagination/Pagination.jsx";
 import SortEventsBy from "../../components/SortEventsBy/SortEventsBy.jsx";
 import { toast } from "react-toastify";
-const serverURL = "https://back-eventsregapp.onrender.com";
-// const serverURL = "http://localhost:3000";
+
+const serverURL = import.meta.env.VITE_API_URL || "ws://localhost:3000";
+console.log(serverURL);
 
 axios.defaults.baseURL = serverURL;
 
@@ -22,6 +23,7 @@ export default function HomePage() {
   const [page, setPage] = useState(Number(queryParams.get("page")) || 1);
   const [sortBy, setSortBy] = useState(queryParams.get("sortBy") || "date");
   const [sortOrder] = useState("asc");
+
   useEffect(() => {
     const getEventsList = async () => {
       try {

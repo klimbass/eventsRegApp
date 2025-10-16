@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import css from "./EventDetailsModal.module.css";
+import { useEventViewers } from "../../hooks/useEventViewers";
 
 export default function EventDetailsModal({ event }) {
   const participantsCount = event.participantsList.length;
+
+  const { viewerCount } = useEventViewers(event._id);
+
   return (
     <div className={css.wrap}>
       <h2>{event.title}</h2>
@@ -26,6 +30,11 @@ export default function EventDetailsModal({ event }) {
         <Link>
           <h3>{event.organizer}</h3>
         </Link>
+      </div>
+      <div className={css.viewer}>
+        <p>
+          {viewerCount} {viewerCount === 1 ? "person" : "people"} viewing
+        </p>
       </div>
     </div>
   );

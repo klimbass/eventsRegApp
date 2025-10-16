@@ -1,22 +1,23 @@
 .wrap {
-  width: 450px;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: #fff;
-  padding: 24px;
+  padding: 16px;
 }
 .wrap > h2 {
   text-align: center;
+  font-size: 18px;
 }
 .textTitle {
   font-weight: 600;
 }
 .partWrap {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
-  gap: 12px;
+  gap: 6px;
 }
 .partWrap a {
   border: var(--border-style);
@@ -25,7 +26,46 @@
 }
 .organizer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  gap: 16%;
+  gap: 10%;
+  margin-bottom: 8px;
+}
+.organizer h3 {
+  font-size: 14px;
+}
+.viewer {
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+}
+@media (min-width: 500px) {
+  .wrap {
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+    padding: 24px;
+  }
+  .wrap > h2 {
+    font-size: 24px;
+  }
+  .textTitle {
+    font-weight: 600;
+  }
+  .partWrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .organizer {
+    flex-direction: row;
+    gap: 16%;
+    margin-bottom: 0;
+  }
+  .organizer h3 {
+    font-size: 18px;
+  }
 }
