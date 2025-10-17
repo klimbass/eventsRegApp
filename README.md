@@ -16,9 +16,10 @@ On the participant list page, a search feature is implemented, allowing users to
 
 ## 📸 Screenshots
 
-![Events List](https://via.placeholder.com/800x400/4F46E5/FFFFFF?text=Events+List+with+Live+Viewers)
-![Registration Form](https://via.placeholder.com/800x400/10B981/FFFFFF?text=Registration+Form+with+Validation)
-![Participants Page](https://via.placeholder.com/800x400/F59E0B/FFFFFF?text=Participants+List+with+Search)
+- ![Events List](<img width="1297" height="646" alt="image" src="https://github.com/user-attachments/assets/a7aa049e-19eb-474c-9c4f-4d8cd2c1a795" />)
+- ![Registration Form](<img width="1297" height="646" alt="image" src="https://github.com/user-attachments/assets/9e659d0e-aea2-48a5-946c-c8d1d77ff1c3" />)
+- ![Participants Page](<img width="1297" height="646" alt="image" src="https://github.com/user-attachments/assets/de5bcd82-12cd-4351-bfe0-2da870ce7652" />)
+- ![Events Detal Info ](<img width="1297" height="646" alt="image" src="https://github.com/user-attachments/assets/6336b57d-ef95-4ed5-99be-8958bc9f89f1" />)
 
 ##  Features
 
@@ -56,7 +57,7 @@ On the participant list page, a search feature is implemented, allowing users to
 - **Environment Variables** - Secure configuration management
 
 ## Project Structure
-
+```bash   
 src/
 ├── components/ # Reusable UI components
 │ ├── EventCard/ # Event display component
@@ -73,7 +74,7 @@ src/
 ├── config/ # Configuration files
 │ └── constants.js # API URLs and settings
 └── App.jsx # Main application component
-
+```
 
 ## Quick Start
 
@@ -84,21 +85,21 @@ src/
 ### Installation
 
 1. **Clone the repository**
-   ```bash
+```bash
   git clone https://github.com/klimbass/eventsRegApp.git
   cd eventsRegApp
-
+```
 ### Install dependencies
-  npm install
+- npm install
 
 ### Environment Setup
-  Create .env local file:
-  VITE_API_URL=http://localhost:3000
-  VITE_WS_URL=ws://localhost:3000
+- Create .env local file:
+- VITE_API_URL=http://localhost:3000
+- VITE_WS_URL=ws://localhost:3000
 
 ### Start development server
-  npm run dev
-  App will be available at http://localhost:5173
+- npm run dev
+App will be available at http://localhost:5173
 
 ### Building for Production
   npm run build
@@ -107,38 +108,39 @@ src/
 ## API Integration
 
 ### Endpoints
-  GET /events - Fetch paginated events list
-  POST /events/:id/register - Register for an event
-  GET /events/:id/participants - Get event participants  
+ - GET /events - Fetch paginated events list
+ - POST /events/:id/register - Register for an event
+ - GET /events/:id/participants - Get event participants  
 
 ### WebSocket Events
-  VIEWING_EVENT - Track user viewing an event
-  LEFT_EVENT - Track user leaving an event
-  VIEWER_COUNT_UPDATE - Live viewers count updates
+ - **VIEWING_EVENT** - Track user viewing an event
+ - **LEFT_EVENT** - Track user leaving an event
+ - **VIEWER_COUNT_UPDATE** - Live viewers count updates
 
 ## Key Components
 ### EventViewerCounter
   Displays real-time viewer count using WebSocket connection:
+  ```
   <EventViewerCounter eventId="event123" />
     // Shows: 5 people viewing
-
+  ```
 ### Custom Hooks
-  useWebSocket - Manages WebSocket connection and reconnection
-  useEventViewers - Tracks and displays live viewer statistics
+ - **useWebSocket** - Manages WebSocket connection and reconnection
+ - **useEventViewers** - Tracks and displays live viewer statistics
 
 ## Deployment
    The application is automatically deployed to Vercel on every push to main branch.
 
 ### Environment Variables for Production
-  VITE_API_URL - Backend API URL
-  VITE_WS_URL - WebSocket server URL
+ - **VITE_API_URL** - Backend API URL
+ - **VITE_WS_URL** - WebSocket server URL
 
 ## Contributing
-  Fork the repository
-  Create your feature branch (git checkout -b feature/amazing-feature)
-  Commit your changes (git commit -m 'Add amazing feature')
-  Push to the branch (git push origin feature/amazing-feature)
-  Open a Pull Request
+ - Fork the repository
+ - Create your feature branch (git checkout -b feature/amazing-feature)
+ - Commit your changes (git commit -m 'Add amazing feature')
+ - Push to the branch (git push origin feature/amazing-feature)
+ - Open a Pull Request
 
 ## License
   This project is licensed under the MIT License - see the LICENSE file for details.
@@ -152,6 +154,6 @@ src/
 -  **Email**: oleksandr.klimov@web.de
 
 ## Acknowledgments
-  React team for amazing framework
-  Vercel for seamless deployment
-  Render for reliable backend hosting
+ - **React team** for amazing framework
+ - **Vercel** for seamless deployment
+ - **Render** for reliable backend hosting
