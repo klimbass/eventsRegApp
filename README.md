@@ -97,8 +97,9 @@ src/
   cd eventsRegApp
 ```
 ### Install dependencies
-- npm install
-
+```
+ npm install
+```
 ### Environment Setup
  Create .env local file:
 - VITE_API_URL=http://localhost:3000
