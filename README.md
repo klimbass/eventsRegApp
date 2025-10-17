@@ -14,12 +14,19 @@ On the participant list page, a search feature is implemented, allowing users to
 **Frontend**: [https://events-reg-app.vercel.app](https://events-reg-app.vercel.app)  
 **Backend API**: [https://back-eventsregapp.onrender.com](https://back-eventsregapp.onrender.com)
 
-## 📸 Screenshots
+## Screenshots
 
-- ![Events List](<img width="1297" height="646" alt="image" src="https://github.com/user-attachments/assets/a7aa049e-19eb-474c-9c4f-4d8cd2c1a795" />)
-- ![Registration Form](<img width="1297" height="646" alt="image" src="https://github.com/user-attachments/assets/9e659d0e-aea2-48a5-946c-c8d1d77ff1c3" />)
-- ![Participants Page](<img width="1297" height="646" alt="image" src="https://github.com/user-attachments/assets/de5bcd82-12cd-4351-bfe0-2da870ce7652" />)
-- ![Events Detal Info ](<img width="1297" height="646" alt="image" src="https://github.com/user-attachments/assets/6336b57d-ef95-4ed5-99be-8958bc9f89f1" />)
+### Events Listing Page
+![Events List](https://github.com/user-attachments/assets/a7aa049e-19eb-474c-9c4f-4d8cd2c1a795)
+
+### Registration Form
+![Registration Form](https://github.com/user-attachments/assets/9e659d0e-aea2-48a5-946c-c8d1d77ff1c3)
+
+### Participants Management
+![Participants Page](https://github.com/user-attachments/assets/de5bcd82-12cd-4351-bfe0-2da870ce7652)
+
+### Event Details
+![Events Detail Info](https://github.com/user-attachments/assets/6336b57d-ef95-4ed5-99be-8958bc9f89f1)
 
 ##  Features
 
@@ -93,17 +100,21 @@ src/
 - npm install
 
 ### Environment Setup
-- Create .env local file:
+ Create .env local file:
 - VITE_API_URL=http://localhost:3000
 - VITE_WS_URL=ws://localhost:3000
 
 ### Start development server
-- npm run dev
+```
+ npm run dev
+```
 App will be available at http://localhost:5173
 
 ### Building for Production
+```
   npm run build
   npm run preview
+```
 
 ## API Integration
 
